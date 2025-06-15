@@ -14,4 +14,14 @@ app.use(express.urlencoded({extended: true, limit: "16kb"}));
 app.use(express.static("public")) // to store public assets
 app.use(cookieParser())
 
+
+//routes
+
+import userRouter from './routes/user.routes.js';
+
+
+//routes declaaration
+app.use("/api/v1/users", userRouter)
+// localhost:8000/api/vi/users/register
+
 export {app}
